@@ -1,0 +1,145 @@
+@import "./variable";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    // background-color: $accent_color;
+    color: $primary_color;
+    font-family: $main_font;
+
+
+}
+p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    line-height: 1.6;
+    font-size: 80px;
+    text-align: center;
+    opacity: 0;
+}
+
+p.fadeIn {
+  
+    animation: fadeInText 1s ease forwards;
+   
+}
+
+p.fadeOut {
+  
+    animation: fadeOutText 1s ease forwards;
+   
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -10%);
+      
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+       
+    }
+}
+
+@keyframes fadeOutText {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -80%);
+       
+    }
+}
+
+p.text {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    animation: colorText 1s ease forwards;
+}
+
+@keyframes colorText {
+    0% {
+        color: $primary_color;
+      
+    }
+
+    100% {
+        color: $accent_color;
+    }
+}
+
+p.black  {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    animation: colorblack 1s ease forwards;
+}
+
+@keyframes colorblack {
+    0% {
+        color: $accent_color;
+    }
+
+    100% {
+        color: $primary_color;
+        
+    }
+}
+
+#wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cover {
+    background-color: #000;
+    width: 0%;
+    height: 100vh;
+    transition: 0.3s;
+    animation: backgroundin 1s ease forwards;
+    animation-delay: 1s;
+   
+}
+
+.coverUp{
+    background-color: #000;
+   width: 50%;
+    height: 100vh;
+    // transition: 0.3s;
+    animation: backgroundup 1s ease forwards;
+    // animation-delay: 1s;
+   
+}
+
+@keyframes backgroundin {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes backgroundup {
+    0% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 0;
+    }
+}
